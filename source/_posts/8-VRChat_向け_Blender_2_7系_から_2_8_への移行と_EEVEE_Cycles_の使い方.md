@@ -1,19 +1,3 @@
----
-id: QmxvZy84
-path: "/@taremin/8"
-author: "@taremin"
-contributors:
-- "@taremin"
-coediting: false
-folder: 
-groups:
-- Home
-published_at: '2019-01-30 17:10:55 +0900'
-updated_at: '2019-01-30 17:10:55 +0900'
-archived_at: 
-comments: []
----
-
 # VRChat 向け Blender 2.7系 から 2.8 への移行と EEVEE/Cycles の使い方
 
 ## Blender 2.8 への移行
@@ -72,7 +56,7 @@ Blender 2.8 はすごく目立たなくなっていますが、画面の四隅�
 
 分割した方のエリアは「Shader Editor」にします。
 
-#####  マテリアルでノードを使用する 
+##### マテリアルでノードを使用する
 
 マテリアルから「ノードを使用」を有効にします。
 
@@ -92,14 +76,15 @@ Blender 2.8 はすごく目立たなくなっていますが、画面の四隅�
 ## テクスチャのベイク
 
 ### ベイク準備
+
 せっかくノードベースのレンダリングエンジンになったので、テクスチャのカゲ塗りなどをベイクしたりして手間を省きたいと思います。（お絵描き下手なのでテクスチャがつらい）
 
 まず、これは知らないと困るのですけど、EEVEEではベイク出来ません。ベイクするときはCyclesにします。
 ほとんど共通のノードになっているので、大体EEVEEのノードのままで同じ結果をベイクすることができます。
 一部EEVEEではサポートされていないノードは下記で見ることができます。
 
-- https://docs.blender.org/manual/en/dev/render/eevee/materials/nodes_support.html
-    - 特に注意するのは「Shader to RGB」と「Specular BSDF」がEEVEE専用というところ
+-   <https://docs.blender.org/manual/en/dev/render/eevee/materials/nodes_support.html>
+    -   特に注意するのは「Shader to RGB」と「Specular BSDF」がEEVEE専用というところ
 
 EEVEEとCyclesの切り替えはここで行うことができます。(「反復」がCycles)
 
@@ -159,7 +144,6 @@ Cyclesではテクスチャーをベイクした結果のテクスチャは「�
 <img title='2019-01-30_16h02_27.png' src='/images/attachments/247.png' width="296" data-meta='{"width":296,"height":327}'>
 
 また、ベイク先にベイク結果が書き込まれないという場合はベイク先の「画像テクスチャ」ノードが「生成」になってるか確認してみるといいかもしれません。
-
 
 ### ベイク後のテクスチャでモデルを表示したい
 
@@ -276,7 +260,3 @@ Tabキーを押してグループを抜けましょう。もう一度グルー�
 もっとトゥーン調にしたい場合はミックスに繋ぐ前に「カラーランプ」を付けて調整できるようにしてみるとか、他のマテリアルでも使えるようにグループ化してみるとか、頂点カラーでカゲを調整できるようにしたりとか、色々応用が効くので遊んでみるのも面白いと思います。
 
 おつかれさまでした！
-
-
-
-

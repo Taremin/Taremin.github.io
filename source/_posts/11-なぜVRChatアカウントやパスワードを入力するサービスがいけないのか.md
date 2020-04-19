@@ -1,19 +1,3 @@
----
-id: QmxvZy8xMQ
-path: "/@taremin/11"
-author: "@taremin"
-contributors:
-- "@taremin"
-coediting: false
-folder: 
-groups:
-- Home
-published_at: '2019-04-07 06:26:26 +0900'
-updated_at: '2019-04-07 12:48:40 +0900'
-archived_at: 
-comments: []
----
-
 # なぜVRChatアカウントやパスワードを入力するサービスがいけないのか
 
 ## はじめに
@@ -28,40 +12,35 @@ comments: []
 
 ### [Terms of Service](https://vrchat.com/legal) (利用規約) より
 
-```
- You are solely responsible for maintaining the confidentiality of your account and password, and you accept responsibility for all activities that occur under your account. If you have reason to believe that your account is no longer secure, then you must immediately notify us at support@vrchat.com.
-```
+     You are solely responsible for maintaining the confidentiality of your account and password, and you accept responsibility for all activities that occur under your account. If you have reason to believe that your account is no longer secure, then you must immediately notify us at support@vrchat.com.
+
 (以下Google翻訳)
-```
-あなたはあなたのアカウントとパスワードの機密性を維持することに対して単独で責任があり、あなたはあなたのアカウントの下で起こるすべての活動に対する責任を引き受けます。あなたのアカウントが安全ではなくなったと信じる理由がある場合は、すぐにsupport@vrchat.comまでご連絡ください。
-```
+
+    あなたはあなたのアカウントとパスワードの機密性を維持することに対して単独で責任があり、あなたはあなたのアカウントの下で起こるすべての活動に対する責任を引き受けます。あなたのアカウントが安全ではなくなったと信じる理由がある場合は、すぐにsupport@vrchat.comまでご連絡ください。
 
 ### API の利用に関して問い合わせたオニオンさんのツイート
 
 <blockquote class="twitter-tweet" data-partner="tweetdeck"><p lang="ja" dir="ltr">気になったので、VRChat API についての質問の返事来た。<br>翻訳「悪意のない限りAPI 使っても構いませんけど、垢IDとパスワードを要求するアプリはダメ」みたい。 <a href="https://t.co/pPbLH09Tt4">pic.twitter.com/pPbLH09Tt4</a></p>&mdash; オニオン@VRC (@onion_vrchat) <a href="https://twitter.com/onion_vrchat/status/1020094529297190912?ref_src=twsrc%5Etfw">July 19, 2018</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-
 ## VRChat API で何が出来るのか
 
 公式サイト、VRChatクライアント、UnityのVRChat SDKで行える操作はすべて出来ると思ったほうが良いです。
 やられたら困ると思われる例をいくつか挙げておきます。
 
-- アバター/ワールドの盗難 (ファイルのダウンロード)
-- アバター/ワールドの全削除
-- フレンドの全削除
+-   アバター/ワールドの盗難 (ファイルのダウンロード)
+-   アバター/ワールドの全削除
+-   フレンドの全削除
 
 現在のVRChat APIでは個別の権限について制御できないので、認証を通してしまうとこれらの事を行うことが可能になります。
 Twitter連携のアプリやTwitterログインに対応してるサービスを利用しても危険ではないのは、この「個別の権限について制御」が出来るからです。
 （タイムラインを読むだけしかできないとか。こういう認証と権限を制限をするために OAuth や OpenID Connect という規格があります）
-
 
 ## よくありそうな質問
 
 ### 代替案はないの？
 
 今の所ありません。VRChat API が OAuth や OpenID Connect に対応するのを祈るか、新機能として機能追加を要求するのが良いと思います。
-
 
 ### サービス提供者が信頼できるので良いのでは？
 
@@ -73,19 +52,16 @@ Twitter連携のアプリやTwitterログインに対応してるサービスを
 
 個人的には、関連サービスを作れるくらいの人はこういう危険性を理解できてると思うので、危険性についてなにも触れないで利用を推奨するのはフェアではないと思います。
 
-
 ### サービス提供者がID/パスワードの保存はしてないと言ってるので大丈夫？
 
 まず第一にサービス提供者が信用できるか。これは個人によるのでなんとも言えませんが、客観的に評価することは難しいと思います。途中で心変わりによって突然IDとパスワードを盗みたくなるかもしれません。
 また、サービス提供者にその気がなくてもXSSなどの脆弱性で第三者によってID/パスワードだったり認証情報が盗まれる可能性もあります。
-
 
 ### VRChat 公式の API を使ってるなら大丈夫なのでは？
 
 VRChatのAPIというのはあくまでも「VRChatクライアント」及び「VRChat公式サイト」と「VRChat SDK (Unity)」で利用するために作られていて関連サービスを提供するために作られているわけではありません。
 APIの利用は許されているようですが、おそらくこれは個人でプログラムを書いて何かを調査したりするために利用することが許されているのだと思います。
 （自分で書いたプログラムを自分のアカウントで使うため、アカウント情報の漏洩はしないものと見做している）
-
 
 ### ID / Password を入力しないものなら大丈夫？
 
@@ -94,8 +70,7 @@ VRChat運営のポリシーには一応反していないと思いますが、�
 
 具体的に他の方法での認証を提供してる例を以下に挙げます。
 
-- Chrome拡張で公式ページの機能を拡張する
-    - 公式ページの認証トークンでAPIにアクセスできる（ので全てのAPIによる操作が可能）
-- 認証トークンを入力するサービス
-    - 入力された認証トークンでAPIにアクセスできる（ので全てのAPIによる操作が可能）
-
+-   Chrome拡張で公式ページの機能を拡張する
+    -   公式ページの認証トークンでAPIにアクセスできる（ので全てのAPIによる操作が可能）
+-   認証トークンを入力するサービス
+    -   入力された認証トークンでAPIにアクセスできる（ので全てのAPIによる操作が可能）

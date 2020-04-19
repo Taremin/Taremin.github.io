@@ -1,19 +1,3 @@
----
-id: QmxvZy80Mg
-path: "/@taremin/42"
-author: "@taremin"
-contributors:
-- "@taremin"
-coediting: false
-folder: 
-groups:
-- Home
-published_at: '2019-05-21 14:37:44 +0900'
-updated_at: '2019-05-21 15:02:46 +0900'
-archived_at: 
-comments: []
----
-
 # Taremin活動メモ
 
 いろいろ手を広げすぎてて私自身でも何やったか忘れがちなので！
@@ -87,7 +71,6 @@ Voxel Heat Diffuse Skinning という有償アドオンがあるのですが、�
 VRChat API を使ってフレンドの一覧を表示するサイトです。 **自分用につくったので他の人の利用は推奨してません。**
 使わなくなったタブレットにずっとこのページを表示させてます。（便利）
 
-
 ## 他作者さまのOSSの修正やPullReqなど
 
 ### Blender アドオン
@@ -116,4 +99,3 @@ Blenderに標準で付属しているFBXインポーター/エクスポーター
 ブラウザでVRMモデルを表示するライブラリ。
 MToonに対応してたり、VMD(MMDのモーションデータ)にも対応してたりとすごい実装です。
 私が行ったのはMToonシェーダーの一部バグ修正です。(PullReqマージ済み)
-

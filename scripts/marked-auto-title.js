@@ -2,6 +2,7 @@
 
 const marked = require('marked');
 const moment = require('moment');
+const path = require('path');
 
 function filterPost(log, data) {
     const tokens = marked.lexer(data.content);
@@ -16,12 +17,21 @@ function filterPost(log, data) {
         }
     });
     data.title = title;
-    if (data.published_at) {
-        data.date = moment(new Date(data.published_at));
+
+    const metapath = path.join(path.dirname(data.full_source), path.basename(data.full_source, '.md') + '.meta.json');
+    let meta;
+    try {
+        meta = require(metapath);
+    } catch (e) {
+        meta = {};
     }
 
-    if (data.updated_at) {
-        data.updated = moment(new Date(data.updated_at));
+    if (meta.published_at) {
+        data.date = moment(new Date(meta.published_at));
+    }
+
+    if (meta.updated_at) {
+        data.updated = moment(new Date(meta.updated_at));
     }
 }
 

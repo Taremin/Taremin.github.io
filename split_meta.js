@@ -33,6 +33,9 @@ function splitMeta(filepath) {
         .use(extract, { yaml: yaml.parse })
         .use(filterChildren, { filter: c => c.type !== 'yaml' && c.type !== 'toml' })
         .process(doc, function (err, file) {
+            if (Object.keys(file.data).length === 0) {
+                return;
+            }
             fs.writeFileSync(filepath, file.toString());
             fs.writeFileSync(metapath, JSON.stringify(file.data, null, 2));
         });

@@ -15,5 +15,5 @@ npm run split_meta
 
 ## 記事を修正する
 
-`sources/_posts/` の Markdown を修正して `.meta.json` に `updated_at` を追加する。
+`source/_posts/` の Markdown を修正して `.meta.json` に `updated_at` を追加する。
 

@@ -3,6 +3,10 @@
 const marked = require('marked');
 const moment = require('moment');
 const path = require('path');
+const { loadDefaultJapaneseParser } = require('budoux');
+const cheerio = require('cheerio');
+
+const parser = loadDefaultJapaneseParser();
 
 function filterPost(log, data) {
     const tokens = marked.lexer(data.content);
@@ -42,12 +46,19 @@ hexo.extend.filter.register('before_post_render', function (data) {
     return data;
 });
 
+hexo.extend.filter.register("after_render:html", function (docstr, locals) {
+    const $ = cheerio.load(docstr);
+    const title = $("#post-title").html();
+
+    $("#post-title").html(parser.translateHTMLString(title));
+
+    return $.html();
+});
+
 hexo.extend.filter.register('marked:renderer', function (renderer) {
     const heading = renderer.heading;
-    renderer.heading = function (text, level) {
-        if (level === 1) {
-            return '';
-        }
-        return heading.apply(renderer, arguments);
+    renderer.heading = function ({tokens, depth: level}) {
+        const output = parser.translateHTMLString(heading.apply(this, arguments));
+        return output;
     }
 })

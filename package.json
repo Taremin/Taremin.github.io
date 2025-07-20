@@ -10,24 +10,28 @@
     "split_meta": "node split_meta.js"
   },
   "hexo": {
-    "version": "4.2.0"
+    "version": "7.3.0"
   },
   "dependencies": {
-    "glob": "^7.1.6",
-    "hexo": "^4.0.0",
-    "hexo-deployer-git": "^2.1.0",
-    "hexo-generator-archive": "^1.0.0",
-    "hexo-generator-category": "^1.0.0",
-    "hexo-generator-index": "^1.0.0",
-    "hexo-generator-tag": "^1.0.0",
-    "hexo-renderer-ejs": "^1.0.0",
-    "hexo-renderer-jade": "^0.5.0",
-    "hexo-renderer-marked": "https://github.com/hexojs/hexo-renderer-marked.git",
-    "hexo-renderer-stylus": "^1.1.0",
-    "hexo-server": "^1.0.0",
-    "remark": "^12.0.0",
-    "remark-extract-frontmatter": "^2.0.2",
-    "remark-frontmatter": "^2.0.0",
-    "yaml": "^1.9.1"
+    "budoux": "^0.7.0",
+    "cheerio": "^1.1.0",
+    "glob": "^11.0.3",
+    "hexo": "^7.3.0",
+    "hexo-deployer-git": "^4.0.0",
+    "hexo-generator-archive": "^2.0.0",
+    "hexo-generator-category": "^2.0.0",
+    "hexo-generator-index": "^4.0.0",
+    "hexo-generator-tag": "^2.0.0",
+    "hexo-renderer-ejs": "^2.0.0",
+    "hexo-renderer-marked": "^7.0.1",
+    "hexo-renderer-pug": "^3.0.0",
+    "hexo-renderer-stylus": "^3.0.1",
+    "hexo-server": "^3.0.0",
+    "hexo-theme-melody": "^1.9.1",
+    "pug": "^3.0.3",
+    "remark": "^15.0.1",
+    "remark-extract-frontmatter": "^3.2.0",
+    "remark-frontmatter": "^5.0.0",
+    "yaml": "^2.8.0"
   }
 }
